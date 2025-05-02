@@ -1,9 +1,6 @@
 package com.devstack.quickcart.user_service_api.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,4 +22,9 @@ public class BillingAddress {
     private String city;
     @Column(length = 50,nullable = false)
     private String street;
+
+
+    @OneToOne
+    @JoinColumn(name="user_id",nullable = false,unique = true)
+    private User user;
 }

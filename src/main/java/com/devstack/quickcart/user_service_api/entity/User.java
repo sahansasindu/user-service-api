@@ -33,4 +33,10 @@ public class User {
     @OneToOne(mappedBy = "user")
     private ShippingAddress shippingAddress;
 
+    @OneToOne(mappedBy = "user")
+    private BillingAddress billingAddress;
+
+    @OneToOne(mappedBy = "user")
+    private UserAvatar userAvatar;
+
 }

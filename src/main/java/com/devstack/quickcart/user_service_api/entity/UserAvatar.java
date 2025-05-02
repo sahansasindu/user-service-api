@@ -19,4 +19,9 @@ public class UserAvatar {
     private String avatarid;
     @Embedded
     private FileResource fileResource;
+
+    @OneToOne
+    @JoinColumn(name="user_id",nullable = false,unique = true)
+    private User user;
+
 }
