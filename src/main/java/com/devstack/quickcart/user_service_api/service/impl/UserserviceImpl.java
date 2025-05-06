@@ -5,7 +5,9 @@ import com.devstack.quickcart.user_service_api.dto.request.RequestUserDto;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserLoginRequest;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserPasswordResetDto;
 import com.devstack.quickcart.user_service_api.dto.response.ResponseUserDto;
+import com.devstack.quickcart.user_service_api.repo.OtpRepo;
 import com.devstack.quickcart.user_service_api.repo.UserRepo;
+import com.devstack.quickcart.user_service_api.service.EmailService;
 import com.devstack.quickcart.user_service_api.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,12 @@ public class UserserviceImpl implements UserService {
 
 
     private final KeyclockSecurityUtil keyclockUtil;
+
     private final UserRepo userRepo;
+    private final EmailService emailService;
+    private final OtpRepo otpRepo;
+    private final JwtService jwtService;
+
 
 
 
