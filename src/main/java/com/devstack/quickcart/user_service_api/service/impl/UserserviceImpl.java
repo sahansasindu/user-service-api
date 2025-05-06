@@ -7,6 +7,7 @@ import com.devstack.quickcart.user_service_api.dto.request.RequestUserPasswordRe
 import com.devstack.quickcart.user_service_api.dto.response.ResponseUserDto;
 import com.devstack.quickcart.user_service_api.entity.Otp;
 import com.devstack.quickcart.user_service_api.entity.User;
+import com.devstack.quickcart.user_service_api.exception.*;
 import com.devstack.quickcart.user_service_api.repo.OtpRepo;
 import com.devstack.quickcart.user_service_api.repo.UserRepo;
 import com.devstack.quickcart.user_service_api.service.EmailService;
@@ -109,7 +110,7 @@ public class UserserviceImpl implements UserService {
                     .activeState(false)
                     .username(dto.getUsername())
                     .firstName(dto.getFirstName())
-                    .lastName(dto.getLastName())
+                    .lastName(dto.getLastname())
                     .isAccountNonExpired(true)
                     .isEmailVerified(false)
                     .isAccountNonLocked(true)
@@ -420,7 +421,7 @@ public class UserserviceImpl implements UserService {
         UserRepresentation userRep = new UserRepresentation();
         userRep.setUsername(user.getUsername());
         userRep.setFirstName(user.getFirstName());
-        userRep.setLastName(user.getLastName());
+        userRep.setLastName(user.getLastname());
         userRep.setEmail(user.getUsername());
         userRep.setEnabled(false);
         userRep.setEmailVerified(false);

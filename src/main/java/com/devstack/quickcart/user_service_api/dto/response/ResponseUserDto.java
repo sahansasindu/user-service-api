@@ -7,15 +7,13 @@ import lombok.*;
 @Getter
 @Setter
 @Data
-
+@Builder
 public class ResponseUserDto {
-
-    private String userName;
+    private String username;
     private String firstName;
     private String lastName;
-    private boolean activeSate;
-    private ResponseUserAvatarDto avatarDto;
-    private ResponseBillingAddressDto billingAddressDto;
-    private ResponseShippingAddressDto shippingAddressDto;
-
+    private boolean activeStatus;
+    private ResponseUserAvatarDto avatar; // if an avatar exists, return the actual value if not the system must send a null value
+    private ResponseBillingAddressDto billingAddress; // if value exists ? value : null
+    private ResponseShippingAddressDto shippingAddress; // if value exists ? value : null
 }
