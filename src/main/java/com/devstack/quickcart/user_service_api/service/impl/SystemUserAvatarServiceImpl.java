@@ -1,6 +1,6 @@
 package com.devstack.quickcart.user_service_api.service.impl;
 
-import com.devstack.quickcart.user_service_api.dto.request.RequestUserAvatarDto;
+import com.devstack.quickcart.user_service_api.dto.request.RequestSystemUserAvatarDto;
 import com.devstack.quickcart.user_service_api.entity.FileResource;
 import com.devstack.quickcart.user_service_api.entity.User;
 import com.devstack.quickcart.user_service_api.entity.UserAvatar;
@@ -35,7 +35,7 @@ public class SystemUserAvatarServiceImpl implements SystemUserAvatarService {
     private String bucketName;
 
     @Override
-    public void createSystemUserAvatar(RequestUserAvatarDto dto, String email, MultipartFile file) throws SQLException {
+    public void createSystemUserAvatar(RequestSystemUserAvatarDto dto, String email, MultipartFile file) throws SQLException {
         CommonFileSavedBinaryDataDTO resource = null;
         Optional<User> selectedUser = systemUserRepo.findByUsername(email);
         if (selectedUser.isEmpty()) {
