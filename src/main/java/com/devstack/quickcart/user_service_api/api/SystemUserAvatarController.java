@@ -1,8 +1,7 @@
 package com.devstack.quickcart.user_service_api.api;
 
-
-
-import com.devstack.quickcart.user_service_api.dto.request.RequestUserAvatarDto;
+import com.devstack.quickcart.user_service_api.dto.request.RequestSystemUserAvatarDto;
+import com.devstack.quickcart.user_service_api.service.SystemUserAvatarService;
 import com.devstack.quickcart.user_service_api.service.impl.JwtService;
 import com.devstack.quickcart.user_service_api.util.StandardResponseDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -37,8 +36,8 @@ public class SystemUserAvatarController {
         String email = jwtService.getEmail(token);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        RequestUserAvatarDto dto = objectMapper.readValue(data, RequestUserAvatarDto.class);
-        avatarService.(dto,email, avatar);
+        RequestSystemUserAvatarDto dto = objectMapper.readValue(data, RequestSystemUserAvatarDto.class);
+        avatarService.createSystemUserAvatar(dto,email, avatar);
         return new ResponseEntity<>(
                 new StandardResponseDto(
                         201, "Avatar was Updated", null
