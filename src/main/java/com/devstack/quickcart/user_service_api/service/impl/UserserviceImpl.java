@@ -1,15 +1,29 @@
 package com.devstack.quickcart.user_service_api.service.impl;
 
+import com.devstack.quickcart.user_service_api.config.KeyclockSecurityUtil;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserDto;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserLoginRequest;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserPasswordResetDto;
 import com.devstack.quickcart.user_service_api.dto.response.ResponseUserDto;
+import com.devstack.quickcart.user_service_api.repo.UserRepo;
 import com.devstack.quickcart.user_service_api.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
 
+
+@Service
+@RequiredArgsConstructor
 public class UserserviceImpl implements UserService {
+
+
+    private final KeyclockSecurityUtil keyclockUtil;
+    private final UserRepo userRepo;
+
+
+
     @Override
     public void createUser(RequestUserDto dto) throws IOException {
 
