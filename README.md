@@ -7,7 +7,7 @@ The **User Service** is responsible for managing all user-related operations in 
 It is built using **Spring boot** and exposes RESTful APIs for handling:
 - user authentication
 
-The service uses **MongoDB** as its database.
+The service uses **My Sql** as its database.
 
 ---
 ***E-Commerce System***
