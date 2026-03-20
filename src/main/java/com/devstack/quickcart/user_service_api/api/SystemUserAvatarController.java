@@ -1,9 +1,7 @@
 package com.devstack.quickcart.user_service_api.api;
 
 import com.devstack.quickcart.user_service_api.dto.request.RequestSystemUserAvatarDto;
-import com.devstack.quickcart.user_service_api.service.SystemUserAvatarService;
-import com.devstack.quickcart.user_service_api.service.impl.JwtService;
-import com.devstack.quickcart.user_service_api.util.StandardResponseDto;
+import com.devstack.quickcart.user_service_api.util.StandardResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import com.devstack.quickcart.user_service_api.service.SystemUserAvatarService;
+import com.devstack.quickcart.user_service_api.service.impl.JwtService;
 
 import java.sql.SQLException;
 
@@ -25,7 +25,7 @@ public class SystemUserAvatarController {
 
     @PostMapping("/user/manage-avatar")
     @PreAuthorize("hasAnyRole('user')")
-    public ResponseEntity<StandardResponseDto> manageAvatar(
+    public ResponseEntity<StandardResponse> manageAvatar(
             @RequestParam("data") String data,
             @RequestHeader("Authorization") String tokenHeader,
             @RequestParam("avatar") MultipartFile avatar) throws SQLException, JsonProcessingException {
@@ -39,7 +39,7 @@ public class SystemUserAvatarController {
         RequestSystemUserAvatarDto dto = objectMapper.readValue(data, RequestSystemUserAvatarDto.class);
         avatarService.createSystemUserAvatar(dto,email, avatar);
         return new ResponseEntity<>(
-                new StandardResponseDto(
+                new StandardResponse(
                         201, "Avatar was Updated", null
                 ),
                 HttpStatus.CREATED

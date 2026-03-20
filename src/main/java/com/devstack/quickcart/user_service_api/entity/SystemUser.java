@@ -5,38 +5,29 @@ import lombok.*;
 
 import java.util.Date;
 
-@Entity
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="user")
+@Getter
+@Setter
 @Builder
-
-public class User {
-
+@Entity
+@Table(name = "system_user")
+public class SystemUser {
     @Id
-    @Column(unique = true, nullable = false, name = "user_id")
-    private String userId;
-    @Column(unique = true, nullable = false, name = "username", length = 100)
-    private String username;
-    @Column(name = "first_name", length = 50, nullable = false)
+    @Column(name = "property_id", nullable = false, length = 80)
+    private String propertyId;
+
+    @Column(name = "active_state", columnDefinition = "TINYINT", nullable = false)
+    private Boolean activeState;
+
+    @Column(name = "email", unique = true, length = 250, nullable = false)
+    private String email;
+
+    @Column(name = "first_name", length = 45, nullable = false)
     private String firstName;
-    @Column(name = "last_name", length = 50, nullable = false)
+
+    @Column(name = "last_name", length = 45, nullable = false)
     private String lastName;
-    @Column(name = "active_status", columnDefinition = "TINYINT")
-    private boolean activeState;
-    //===================
-    @OneToOne(mappedBy = "user")
-    private ShippingAddress shippingAddress;
-
-    //===================
-    @OneToOne(mappedBy = "user")
-    private BillingAddress billingAddress;
-
-    //===================
-    @OneToOne(mappedBy = "user")
-    private UserAvatar userAvatar;
 
     @Column(name = "is_account_non_expired", columnDefinition = "TINYINT", nullable = false)
     private Boolean isAccountNonExpired;
@@ -50,7 +41,6 @@ public class User {
     @Column(name = "is_enabled", columnDefinition = "TINYINT", nullable = false)
     private Boolean isEnabled;
 
-
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date", nullable = false, columnDefinition = "DATETIME")
     private Date createdDate;
@@ -58,4 +48,6 @@ public class User {
     @OneToOne(mappedBy = "systemUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Otp otp;
 
+    @OneToOne(mappedBy = "systemUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private SystemUserAvatar systemUserAvatar;
 }

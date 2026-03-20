@@ -11,21 +11,33 @@ import java.util.Date;
 @Setter
 @Builder
 @Entity
-@ToString
-@Table(name = "otp")
-public class Otp {
+@Table(name = "system_user_avatar")
+public class SystemUserAvatar {
     @Id
     @Column(name = "property_id", nullable = false, length = 80)
     private String propertyId;
-    @Column(name = "code", nullable = false, length = 10)
-    private String code;
+
+    @Lob
+    @Column(name = "directory", nullable = false)
+    private byte[] directory;
+
+    @Lob
+    @Column(name = "file_name", nullable = false)
+    private byte[] fileName;
+
+    @Lob
+    @Column(name = "resource_url", nullable = false)
+    private byte[] resourceUrl;
+
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_date", columnDefinition = "DATETIME", nullable = false)
+    @Column(name = "created_date", nullable = false, columnDefinition = "DATETIME")
     private Date createdDate;
-    @Column(name = "is_verified", nullable = false, columnDefinition = "TINYINT")
-    private Boolean isVerified;
-    @Column(name = "attempts", nullable = false)
-    private Integer attempts;
+
+    @Lob
+    @Column(name = "hash", nullable = false)
+    private byte[] hash;
+
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_property_id", referencedColumnName = "property_id", nullable = false)
     private SystemUser systemUser;

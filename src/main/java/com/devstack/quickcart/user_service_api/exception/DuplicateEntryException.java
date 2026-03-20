@@ -9,3 +9,4 @@ public class DuplicateEntryException extends RuntimeException{
         super(message);
     }
 }
+

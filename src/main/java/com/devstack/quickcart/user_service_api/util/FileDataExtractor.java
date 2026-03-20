@@ -1,19 +1,16 @@
 package com.devstack.quickcart.user_service_api.util;
 
-
 import org.springframework.stereotype.Service;
 
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.Blob;
+import java.sql.Connection;
 import java.sql.SQLException;
-
-
 
 @Service
 public class FileDataExtractor {
-
     public CommonFileSavedSimpleDataDTO toStringDataObject(CommonFileSavedBinaryDataDTO dto){
         try {
             String hash;
@@ -106,7 +103,4 @@ public class FileDataExtractor {
     }
 
 }
-
-
-
 

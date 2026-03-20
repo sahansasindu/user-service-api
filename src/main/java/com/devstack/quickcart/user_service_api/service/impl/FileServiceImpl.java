@@ -4,13 +4,13 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.*;
 import com.amazonaws.util.IOUtils;
-import com.devstack.quickcart.user_service_api.service.FileService;
 import com.devstack.quickcart.user_service_api.util.CommonFileSavedBinaryDataDTO;
 import com.devstack.quickcart.user_service_api.util.FileDataExtractor;
 import com.devstack.quickcart.user_service_api.util.ImageUploadGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import com.devstack.quickcart.user_service_api.service.FileService;
 
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.IOException;

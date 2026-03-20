@@ -1,6 +1,5 @@
 package com.devstack.quickcart.user_service_api.service.impl;
 
-import com.devstack.quickcart.user_service_api.service.EmailService;
 import com.devstack.quickcart.user_service_api.util.EmailTemplateHelper;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
@@ -12,6 +11,7 @@ import com.sendgrid.helpers.mail.objects.Email;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import com.devstack.quickcart.user_service_api.service.EmailService;
 
 import java.io.IOException;
 import java.time.Year;
@@ -19,8 +19,6 @@ import java.time.Year;
 @Service
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
-
-
 
     private final EmailTemplateHelper emailTemplateHelper;
 

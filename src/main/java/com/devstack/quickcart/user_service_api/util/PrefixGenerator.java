@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 @Component
-public class OtpGenerator {
+public class PrefixGenerator {
     // Method to generate a random number string of given length
-    public String generateOtp(int length) {
+    public static String generateRandomNumberString(int length) {
         // StringBuilder to build the random number string
         StringBuilder sb = new StringBuilder(length);
 
@@ -20,13 +20,7 @@ public class OtpGenerator {
             sb.append(random.nextInt(10));
         }
 
-        // Check if the first digit is '0' and regenerate if necessary
-        while (sb.charAt(0) == '0') {
-            sb.setCharAt(0, (char) ('1' + random.nextInt(9)));
-        }
-
         // Return the generated random number string
         return sb.toString();
     }
 }
-

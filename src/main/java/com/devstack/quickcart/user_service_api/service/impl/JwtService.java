@@ -1,11 +1,5 @@
 package com.devstack.quickcart.user_service_api.service.impl;
 
-import org.springframework.stereotype.Service;
-
-
-
-
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -20,7 +14,6 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
-
 
 @Service
 public class JwtService {

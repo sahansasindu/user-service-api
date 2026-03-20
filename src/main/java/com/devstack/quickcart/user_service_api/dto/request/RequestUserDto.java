@@ -2,15 +2,18 @@ package com.devstack.quickcart.user_service_api.dto.request;
 
 import lombok.*;
 
+import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Data
+@Builder
+@ToString
 public class RequestUserDto {
 
-    private String username;
-    private String password;
+    private String email;
     private String firstName;
-    private String lastname;
+    private String lastName;
+    private String password;
+    private Date createdDate;
 }
