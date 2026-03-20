@@ -1,4 +1,4 @@
 package com.devstack.quickcart.user_service_api.api;
 
-public class SystemUserAvatarController {
+public class SystemUserController {
 }
