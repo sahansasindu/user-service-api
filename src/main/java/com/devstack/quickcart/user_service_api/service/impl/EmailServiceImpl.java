@@ -1,17 +1,17 @@
-package service.impl;
+package com.devstack.quickcart.user_service_api.service.impl;
 
 import com.devstack.quickcart.user_service_api.util.EmailTemplateHelper;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
-import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
+import com.sendgrid.helpers.mail.objects.Mail;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import service.EmailService;
+import com.devstack.quickcart.user_service_api.service.EmailService;
 
 import java.io.IOException;
 import java.time.Year;
@@ -78,4 +78,3 @@ public class EmailServiceImpl implements EmailService {
         return true;
     }
 }
-

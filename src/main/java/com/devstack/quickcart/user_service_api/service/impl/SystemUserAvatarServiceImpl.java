@@ -1,4 +1,4 @@
-package service.impl;
+package com.devstack.quickcart.user_service_api.service.impl;
 
 import com.devstack.quickcart.user_service_api.dto.request.RequestSystemUserAvatarDto;
 import com.devstack.quickcart.user_service_api.entity.SystemUser;
@@ -13,8 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import service.FileService;
-import service.SystemUserAvatarService;
+import com.devstack.quickcart.user_service_api.service.FileService;
+import com.devstack.quickcart.user_service_api.service.SystemUserAvatarService;
 
 import java.io.InputStreamReader;
 import java.sql.SQLException;

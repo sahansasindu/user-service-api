@@ -1,4 +1,4 @@
-package service;
+package com.devstack.quickcart.user_service_api.service;
 
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserRoleDto;
 import com.devstack.quickcart.user_service_api.dto.response.ResponseUserRoleDTO;

@@ -1,4 +1,4 @@
-package service.impl;
+package com.devstack.quickcart.user_service_api.service.impl;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -59,4 +59,3 @@ public class JwtService {
         }
     }
 }
-

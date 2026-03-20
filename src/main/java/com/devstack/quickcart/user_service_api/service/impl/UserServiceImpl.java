@@ -1,4 +1,4 @@
-package service.impl;
+package com.devstack.quickcart.user_service_api.service.impl;
 
 import com.devstack.quickcart.user_service_api.config.KeycloakSecurityUtil;
 import com.devstack.quickcart.user_service_api.dto.request.RequestRoleDto;
@@ -33,8 +33,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-import service.EmailService;
-import service.UserService;
+import com.devstack.quickcart.user_service_api.service.EmailService;
+import com.devstack.quickcart.user_service_api.service.UserService;
 
 import java.io.IOException;
 import java.util.*;
@@ -667,4 +667,3 @@ public class UserServiceImpl implements UserService {
     }
 
 }
-

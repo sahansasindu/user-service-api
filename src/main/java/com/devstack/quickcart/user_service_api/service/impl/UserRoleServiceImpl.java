@@ -1,4 +1,4 @@
-package service.impl;
+package com.devstack.quickcart.user_service_api.service.impl;
 
 import com.devstack.quickcart.user_service_api.config.KeycloakSecurityUtil;
 import com.devstack.quickcart.user_service_api.dto.request.RequestUserRoleDto;
@@ -10,7 +10,7 @@ import org.keycloak.admin.client.Keycloak;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import service.UserRoleService;
+import com.devstack.quickcart.user_service_api.service.UserRoleService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package service;
+package com.devstack.quickcart.user_service_api.service;
 
 import com.devstack.quickcart.user_service_api.dto.request.RequestSystemUserAvatarDto;
 import org.springframework.web.multipart.MultipartFile;
