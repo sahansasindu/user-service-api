@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import service.UserRoleService;
+import com.devstack.quickcart.user_service_api.service.UserRoleService;
 
 import java.io.IOException;
 
